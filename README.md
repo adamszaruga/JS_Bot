@@ -11,6 +11,55 @@ Clone this repository to your computer. Create a code branch using `git branch y
 
 Once all bounties are complete, the Twitch Bot will be ready to deploy!
 
+## Gameplan
+
+The below pseudo-code roughly describes how our twitch bot should behave:
+
+```
+Javascript Interpereting Twitch Bot
+
+Goal: Write a twitch bot that will let viewers run javascript in the chat
+
+Global Variables - 
+	userExpressionMap - An Object that maps twitch user names to an Array of Javascript Expressions
+
+When a Twitch viewer writes a message in chat:
+
+	First, parse the message to see if it's valid JavaScript
+		
+	if the message is valid JS:
+
+		Add the message to the Array in userExpressionMap for the given twitch user
+
+		Use safe-eval to evaluate all the expressions in the array, in order
+
+			If an expression creates/uses variables, update safe-eval's context object
+			
+			Pass the context object to the next safe-eval call
+
+		TwitchBot responds with the last evaluated value from safe-eval
+		
+	else if the message is the !undo command:
+
+		Pop last element from the Array in userExpressionMap for the given twitch user
+
+	else if the message is the !code command:
+
+		If it doesn't exist already, create a folder for that user
+
+		Create a script.js file in that folder
+
+		Create a README.md file in that folder
+
+		Find the expression Array for the given Twitch User and write it to the script.js file
+
+		Write a neatly formatted set of instructions for running the code in README.md
+
+		Trigger a push to GitHub
+
+		TwitchBot responds with a link to the code we just published
+```
+
 ## Bounties
 
 - :hourglass: Bounty #1 (easy)
