@@ -47,19 +47,18 @@ Once all bounties are complete, the Twitch Bot will be ready to deploy!
         - If the array exists and isn't empty, remove the last element
 
 - :hourglass: Bounty #7 (involves learning new things in NodeJS)
-    - Write a `exportSession` function that creates/updates local files based on a given Twitch username
-        - Create a folder named by the twitch username, if it doesn't already exists
-        - Create a script.js file in that folder, if it doesn't already exist
-            - Grab the Array of js expressions the Twitch user has entered so far.
-            - Write those expressions as lines of JS in script.js
-        - Create a README.md file in that folder, if it doesn't already exist
-            - Write lines of text to this file that provide instructions on how to run the script.js file
+    - Write a `exportSession` function that creates a Github Gist based on a given Twitch username
+        - Use the Github API to create a new Gist
+            - The Gist should contain the code in the twitch user's expression Array
+            - Include a comment block at the top that explains how to run the javascript code
+        - Return a url to the gist
 
-- :hourglass: Bounty #8 (easy, and involves coordinating with Adam)
+- :hourglass: Bounty #8 (involves getting carried by Bounty #7  )
     - Build out the logic within the "if message is !code" block
         - Use the `exportSession` function from Bounty #7
-        - Reply in the Twitch chat with a GitHub url where the user can access their code
-            - Ask me about what GitHub url to use, I'll write another program that auto-pushes these exported sessions to GitHub
+        - Reply in the Twitch chat with a link to the user's generated Github Gist
+        - Use `@username` to tag the person who typed the !code command
+            
 
 - :hourglass: Bounty #9 (due diligence)
     - Update this README with better, more useful information. 
