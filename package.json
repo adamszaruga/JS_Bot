@@ -1,0 +1,23 @@
+{
+    "name": "JS-Bot",
+    "version": "0.0.1",
+    "description": "A Twitch IRCBot that evaluates JavaScript in chat",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.16.4",
+        "tmi.js": "^1.5.0"
+    },
+    "engines": {
+        "node": "7.10.x"
+    },
+    "license": "MIT",
+    "keywords": [
+        "node",
+        "express",
+        "twitch.tv",
+        "javascript"
+    ]
+}
