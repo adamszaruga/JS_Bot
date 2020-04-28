@@ -45,19 +45,11 @@ When a Twitch viewer writes a message in chat:
 
 	else if the message is the !code command:
 
-		If it doesn't exist already, create a folder for that user
-
-		Create a script.js file in that folder
-
-		Create a README.md file in that folder
-
 		Find the expression Array for the given Twitch User and write it to the script.js file
 
-		Write a neatly formatted set of instructions for running the code in README.md
+		Push script.js to a Github Gist using their API
 
-		Trigger a push to GitHub
-
-		TwitchBot responds with a link to the code we just published
+		TwitchBot responds with a link to the gist we just published
 ```
 
 ## Bounties
